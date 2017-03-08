@@ -1,0 +1,105 @@
+.messageBoard {
+  overflow-y: auto;
+  flex: 1;
+  min-width: 600px;
+  height: 600px;
+}
+
+.messageInConversation {
+  position: relative;
+  display: flex;
+  margin-top: 20px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.userMessage {
+  flex-direction: row;
+  margin-left: 30px;
+}
+
+.myMessage {
+  flex-direction: row-reverse;
+  margin-right: 30px;
+}
+
+.userImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.userImg > img {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #727476;
+  border-radius: 50%;
+}
+
+.messageTimeLabel {
+  margin-top: 13px;
+  color: #727476;
+}
+
+.messageText {
+  position: relative;
+  max-width: 300px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  word-wrap: break-word;
+  white-space: pre-line;
+  word-break: normal;
+}
+
+.messageText:hover::after {
+  position: absolute;
+  font-family: FontAwesome, serif;
+  content: '\f058';
+  top: 0;
+  color: #676c71;
+  font-size: 0.8em;
+}
+
+.userMessageText {
+  margin-left: 25px;
+  background-color: #fdfdfe;
+  color: #191919;
+  margin-bottom: 30px;
+}
+
+.userMessageText:hover::after {
+  right: -15px;
+}
+
+.myMessageText {
+  margin-right: 25px;
+  background-color: #0084ff;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.myMessageText:hover::after {
+  left: -15px;
+}
+
+.messageText::before {
+  content: '';
+  position: absolute;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+
+.userMessageText::before {
+  border-bottom: 8px solid #fff;
+  left: -10px;
+  transform: rotate(-90deg);
+}
+
+.myMessageText::before {
+  border-bottom: 8px solid #0084ff;
+  right: -10px;
+  transform: rotate(90deg);
+}

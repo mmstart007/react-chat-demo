@@ -1,0 +1,119 @@
+.chatBoardContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #edeff2;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.chatBoardHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #d5d7da;
+}
+
+.messageStatus {
+  align-self: center;
+  margin-left: 30px;
+  color: #51575e;
+  font-size: 0.8em ;
+}
+
+.chatButtonsSection {
+  display: flex;
+  flex-direction: row;
+}
+
+.chatButton {
+  position: relative;
+  font-family: FontAwesome, serif;
+  font-size: 1.3em;
+  color: #81868c;
+  border-left: 1px solid #d5d7da;
+  padding: 28px;
+}
+
+.chatButton:hover {
+  background-color: #afb2b4;
+}
+
+.favouriteButton::after {
+  content: '\f005';
+}
+
+.attachmentsButton::after {
+  display: inline-block;
+  content: '\f0c6';
+  transform: rotate(223deg)
+}
+
+.callButton::after {
+  content: '\f095';
+}
+
+.videoCallButton::after {
+  content: '\f03d';
+}
+
+.inputFieldContainer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #fbfcfd;
+  border-top: 1px solid #e1e4e4;
+}
+
+.chatButtonAttach {
+  padding: 28px;
+}
+
+.chatButtonAttach::before {
+  content: '\f0c6';
+  display: inline-block;
+  font-family: FontAwesome, serif;
+  font-size: 1.5em;
+  color: #93969a;
+  transform: rotate(223deg);
+}
+
+.chatButtonAttach:hover {
+  background-color: #edeff2;
+}
+
+.messageField {
+  flex: 1 0;
+  margin-left: 10px;
+  font-size: 1.5em;
+  color: #1d232a;
+  background-color: #fbfcfd;
+  border: none;
+  resize: none;
+  overflow: hidden;
+  padding-top: 20px;
+  min-height: 50px;
+  max-height: 150px;
+  display: inline-block;
+  outline: none;
+}
+
+.chatButtonSend {
+  padding: 28px;
+}
+
+.chatButtonSend::after {
+  content: '\f1d8';
+  font-family: FontAwesome, serif;
+  font-size: 1.5em;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 20px;
+  background-color: #93969a;
+}
+
+.chatButtonSend:hover::after {
+  background-color: #363d45;
+}

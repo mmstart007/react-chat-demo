@@ -1,0 +1,125 @@
+.userInfoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-basis: 300px;
+}
+
+.userInfoHeader {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  height: 79px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.notificationButton {
+  margin-left: 30px;
+  flex: 1;
+}
+
+.userInfoActions {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.notificationButton::after {
+  content: '\f0f3';
+  font-family: FontAwesome, serif;
+  font-size: 1em;
+  color: #898d91;
+}
+
+.notificationButton:hover:after {
+  color: #0084ff;
+}
+.userInfoActions {
+  color: #a5a8ab;
+  cursor: default;
+}
+
+.userInfoActions:hover {
+  color: #676c71;
+}
+
+.userInfoActions::after {
+  content: '\f0d7';
+  font-family: FontAwesome, serif;
+  font-size: 0.8em;
+  color: #2b80ff;
+  margin-left: 12px;
+}
+
+.userInfoSubContainer {
+  margin-top: 20px;
+  flex: 1;
+}
+
+.mainUserInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.userImgInfo {
+  align-self: center;
+}
+
+.userImgInfo > img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid #3e454b;
+}
+
+.userNameInfo {
+  font-weight: bold;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.userCityInfo {
+  margin-top: 10px;
+  margin-bottom: 35px;
+  font-size: 0.8em;
+  text-align: center;
+  color: #a5a8ab;
+}
+
+.userInfoDescription {
+  border-top: 1px solid #e6e6e6;
+}
+
+.userInfoField {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  min-width: 300px;
+}
+
+.userInfoField:first-child {
+  margin-top: 38px;
+}
+
+/*.userInfoField:not(:last-child)::after {*/
+  /*!*position: absolute;*!*/
+  /*!*bottom: 0;*!*/
+  /*!*content: '';*!*/
+  /*!*border-bottom: 1px solid #e6e6e6;*!*/
+  /*!*width: 250px;*!*/
+  /*!*margin-left: 30px;*!*/
+/*}*/
+
+.userInfoField > .infoTitle {
+  margin-left: 30px;
+  color: #54595f;
+}
+
+.userInfoField > .infoContent {
+  margin-right: 30px;
+  color: #afb2b4;
+}

@@ -1,0 +1,47 @@
+@import 'normalize.css';
+
+@font-face {
+  font-family: FontAwesome;
+  src: url(../../assets/fonts/font-awesome/fontawesome-webfont.eot) format('eot');
+  src: url(../../assets/fonts/font-awesome/fontawesome-webfont.svg) format('svg');
+  src: url(../../assets/fonts/font-awesome/fontawesome-webfont.ttf) format('ttf');
+  src: url(../../assets/fonts/font-awesome/fontawesome-webfont.woff) format('woff');
+  src: url(../../assets/fonts/font-awesome/fontawesome-webfont.woff2) format('woff2');
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  flex: 10;
+  min-height: 100%;
+}
+
+figure {
+  margin: 0;
+  user-select: none;
+}
+
+p {
+  margin: 0;
+}
+
+input:focus, input,
+textarea:focus, textarea,
+button:focus, button {
+  border: 0;
+  outline: 0;
+}

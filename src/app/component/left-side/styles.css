@@ -1,0 +1,55 @@
+.navContainer {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 80px;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1d232a;
+  flex: 0;
+}
+
+.navHeader {
+  padding: 32px 33px 32px 32px;
+}
+
+.navHeader:hover {
+  background-color: #282e36;
+}
+
+.menuIcon:after {
+  font-family: FontAwesome, serif;
+  font-size: 1em;
+  color: #fff;
+  content: '\f0c9';
+}
+
+.menuItems {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.messenger {
+  margin: 0;
+  padding: 20px 17px;
+}
+
+.messenger:hover {
+  background-color: #252b32;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  padding-right: 5px;
+}
+
+.messenger > figure {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  animation: 0;
+}
+
+.messenger > figure > img {
+  width: 44px;
+  height: 42px;
+}
