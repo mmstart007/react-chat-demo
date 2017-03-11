@@ -1,0 +1,50 @@
+.chatBoardHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border-bottom: 1px solid #d5d7da;
+}
+
+.messageStatus {
+  align-self: center;
+  margin-left: 30px;
+  color: #51575e;
+  font-size: 0.8em ;
+}
+
+.chatButtonsSection {
+  display: flex;
+  flex-direction: row;
+}
+
+.chatButton {
+  position: relative;
+  font-family: FontAwesome, serif;
+  font-size: 1.3em;
+  color: #81868c;
+  border-left: 1px solid #d5d7da;
+  padding: 28px;
+  cursor: pointer;
+}
+
+.chatButton:hover {
+  background-color: #afb2b4;
+}
+
+.favouriteButton::after {
+  content: '\f005';
+}
+
+.attachmentsButton::after {
+  display: inline-block;
+  content: '\f0c6';
+  transform: rotate(223deg)
+}
+
+.callButton::after {
+  content: '\f095';
+}
+
+.videoCallButton::after {
+  content: '\f03d';
+}

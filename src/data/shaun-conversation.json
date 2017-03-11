@@ -1,17 +1,17 @@
 [
   {
     "text": "Hello",
-    "imgSrc": "kirsten",
+    "imgSrc": "shaun",
     "time": "12:45:10"
   },
   {
-    "text": "Hello, Kirsten!",
+    "text": "Hello, Shaun!",
     "imgSrc": "dave",
     "time": "12:45:20"
   },
   {
     "text": "How are you?",
-    "imgSrc": "kirsten",
+    "imgSrc": "shaun",
     "time": "12:46:24"
   }
 ]

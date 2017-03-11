@@ -1,0 +1,26 @@
+.userInfoActionsContainer {
+  position: relative;
+}
+.userInfoPopupContainer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 18px;
+  right: 70px;
+  background-color: #9a9ca0;
+
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.blockButton {
+  display: block;
+  padding: 5px 20px;
+  margin: 3px 5px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.blockButton:hover {
+  background-color: #50555b;
+}

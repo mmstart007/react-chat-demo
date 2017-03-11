@@ -1,19 +1,9 @@
 'use strict';
 
 import React from 'react';
-import user from './data';
 import LoaderWrapper from '../loader/ComponentWrapper';
+import UserInfoHeader from '../user-info-header/UserInfoHeader';
 import './styles.css';
-
-const InfoHeader = ({name}) => (
-  <header className="userInfoHeader">
-    <span className="notificationButton"/>
-    <span className="userInfoActions">{name}</span>
-  </header>
-);
-InfoHeader.propTypes = {
-  name: React.PropTypes.string.isRequired,
-};
 
 const WrappedImage = LoaderWrapper(({src}) => <img src={src}/>);
 const MainUserInfo = ({user}) => (
@@ -78,10 +68,10 @@ export default class UserInfo extends React.PureComponent {
   render() {
     return (
       <section className="userInfoContainer">
-        <InfoHeader name="Matt Thompson"/>
+        <UserInfoHeader name="Matt Thompson"/>
         <section className="userInfoSubContainer">
-          <MainUserInfo user={user}/>
-          <UserDescription user={user}/>
+          {/*<MainUserInfo user={user}/>*/}
+          {/*<UserDescription user={user}/>*/}
         </section>
       </section>
     );

@@ -1,12 +1,10 @@
 'use strict';
-/* global require */
 
-const whatsApp = require('../../../assets/icons/whats_app_icon.png');
-const skypeIcon = require('../../../assets/icons/skype_icon.png');
-const fbIcon = require('../../../assets/icons/fb_icon.png');
-const viberIcon = require('../../../assets/icons/viber_icon.png');
-const vkIcon = require('../../../assets/icons/n_icon.png');
-
+const whatsApp = 'assets/icons/whats_app_icon.png';
+const skypeIcon = 'assets/icons/skype_icon.png';
+const fbIcon = 'assets/icons/fb_icon.png';
+const viberIcon = 'assets/icons/viber_icon.png';
+const vkIcon = 'assets/icons/n_icon.png';
 
 const items = [
   {imgSrc: whatsApp, title: 'WhatsApp'},

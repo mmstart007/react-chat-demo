@@ -1,7 +1,6 @@
 'use strict';
-/* global require */
 import React from 'react';
-const defaultImg = require('../../../assets/icons/default-user-image.png');
+const defaultImg = 'assets/icons/default-user-image.png';
 
 const Loader = () => {
   return class extends React.PureComponent {

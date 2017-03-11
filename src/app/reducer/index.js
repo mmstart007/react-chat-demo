@@ -3,7 +3,7 @@
 import {combineReducers} from 'redux';
 import * as Actions from '../action/constants';
 
-const selectedConversation = (state = 'kirsten-conversation', action) => {
+const selectedConversation = (state = 'matt', action) => {
   switch (action.type) {
   case Actions.SELECT_CONVERSATION:
     return action.payload;
@@ -39,7 +39,7 @@ const messages = (state = initState, action) => {
   case Actions.SEND_MESSAGE:
     return Object.assign({}, state, {
       isFetching: false,
-      didInvalidate: true,
+      didInvalidate: false,
       messages: [...state.messages, action.payload.message]
     });
   default:
@@ -61,9 +61,28 @@ const messagesByConversation = (state = {}, action) => {
   }
 };
 
+const conversations = (state = [], action) => {
+  switch (action.type) {
+  case Actions.RECEIVE_CONVERSATIONS:
+    return action.payload;
+  default:
+    return state;
+  }
+};
+
+
+const stubUser = () => {
+  return {
+    name: 'Dave Dave',
+    imgSrc: 'dave',
+  };
+};
+
 const rootReducer = combineReducers({
   selectedConversation,
-  messagesByConversation
+  messagesByConversation,
+  conversations,
+  stubUser,
 });
 
 export default rootReducer;

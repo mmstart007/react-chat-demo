@@ -1,0 +1,45 @@
+.attachmentModalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.attachmentsModalHeader {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d5dadd;
+  height: 40px;
+}
+
+.attachmentsModalContent {
+  display: flex;
+  background-color: #ecf1f6;
+  color: white;
+  flex: 1;
+  margin: auto;
+  height: 400px;
+  width: 100%;
+}
+
+.attachmentItem {
+  flex: 1;
+  font-size: 1em;
+  color: #52585e  ;
+  margin-left: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.attachmentItem:not(:last-child) {
+  border-right: 1px solid #d5dadd;
+}
+
+
+.attachmentItem:hover::after {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  content: '';
+  border-bottom: 3px solid #676c71;
+  width: calc(100% - 10px);
+}

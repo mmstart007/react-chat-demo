@@ -1,9 +1,10 @@
 'use strict';
 
 import React from 'react';
-import conversations from './data';
+import MoreButton from '../more-button/MoreButton';
 import LoaderWrapper from '../loader/ComponentWrapper';
 import './styles.css';
+import '../more-button/modalStyle.css';
 
 const ConversationSearch = () => (
   <header className="searchConversationContainer">
@@ -12,23 +13,38 @@ const ConversationSearch = () => (
 );
 
 const WrappedImage = LoaderWrapper(({src}) => <img src={src}/>);
-const Conversation = ({title, text, imgSrc, time}) => (
-  <section className="conversation">
-    <figure className="conversationImg">
-      <WrappedImage src={imgSrc}/>
-    </figure>
-    <section className="message">
-      <div className="messageContent">
-        <span className="conversationTitle">{title}</span>
-        <p className="conversationText">{text.length > 26 ? `${text.slice(0, 26)}...` : text.slice(0, 26)}</p>
-      </div>
-      <div className="messageInfo">
-        <span className="moreButton"/>
-        <span className="conversationTime">{time}</span>
-      </div>
-    </section>
-  </section>
-);
+class Conversation extends React.PureComponent {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const {title, text, imgSrc, time} = this.props;
+    return (
+      <section
+        className="conversation"
+        onClick={() => {
+          this.props.chooseConversation(title.split(' ')[0].toLowerCase());
+        }}
+      >
+        <figure className="conversationImg">
+          <WrappedImage src={`assets/conversations/${imgSrc}.png`}/>
+        </figure>
+        <section className="message">
+          <div className="messageContent">
+            <span className="conversationTitle">{title}</span>
+            <p className="conversationText">{text.length > 26 ? `${text.slice(0, 26)}...` : text.slice(0, 26)}</p>
+          </div>
+          <div className="messageInfo">
+            <MoreButton/>
+            <span className="conversationTime">{time}</span>
+          </div>
+        </section>
+      </section>
+    );
+  }
+}
+
 
 Conversation.propTypes = {
   title: React.PropTypes.string.isRequired,
@@ -44,14 +60,14 @@ export default class ConversationPanel extends React.PureComponent {
         <ConversationSearch/>
         <section>
           {
-            conversations.map(
+            this.props.conversations.map(
               con => <Conversation
                 key={con.title}
                 title={con.title}
-                imgSrc={con.imgSrc}
-                text={con.text}
-                time={con.time}
-              />
+                imgSrc={con.title}
+                text={con.messages[con.messages.length - 1].text}
+                time={con.messages[con.messages.length - 1].time}
+                {...this.props}/>
             )
           }
         </section>

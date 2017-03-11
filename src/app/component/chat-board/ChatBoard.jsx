@@ -1,34 +1,19 @@
 'use strict';
-/* global require */
 import React from 'react';
 import LoaderWrapper from '../loader/ComponentWrapper';
 import './styles.css';
 import './chat-board-section.css';
-const matt = require('../../../assets/conversations/matt.png');
-
-const ChatBoardHeader = ({title}) => (
-  <header className="chatBoardHeader">
-    <span className="messageStatus"><strong>{title}</strong> is typing...</span>
-    <section className="chatButtonsSection">
-      <span className="chatButton attachmentsButton"/>
-      <span className="chatButton favouriteButton"/>
-      <span className="chatButton callButton"/>
-      <span className="chatButton videoCallButton"/>
-    </section>
-  </header>
-);
-ChatBoardHeader.propTypes = {
-  title: React.PropTypes.string,
-};
+import ChatBoardHeader from '../chat-board-header/ChatBoardHeader';
 
 const WrappedImage = LoaderWrapper(({src}) => <img src={src}/>);
 const Message = ({text, time, imgSrc, isMine}) => {
   const messageStyle = `messageInConversation ${isMine ? 'myMessage' : 'userMessage'}`;
   const messageTextStyles = `messageText ${isMine ? 'myMessageText' : 'userMessageText'}`;
+  const image = `assets/conversations/${imgSrc}.png`;
   return (
     <section className={messageStyle}>
       <figure className="userImg">
-        <WrappedImage src={imgSrc}/>
+        <WrappedImage src={image}/>
         <span className="messageTimeLabel">{time}</span>
       </figure>
       <p className={messageTextStyles}>{text}</p>
@@ -55,7 +40,9 @@ class InputField extends React.PureComponent {
     const textContent = this.input.value;
     if (textContent) {
       const time = this.getCurrentTime();
-      this.props.sendMessage({time: time, text: textContent.replace(/\n+/g, '\n')});
+      const message = {time: time, text: textContent.replace(/\n+/g, '\n'), imgSrc: this.props.stubUser.imgSrc};
+      const conversation = this.props.selectedConversation;
+      this.props.sendMessage(message, conversation);
       this.input.value = '';
       this.setState({countChars: 140});
     }
@@ -101,9 +88,11 @@ class InputField extends React.PureComponent {
               countChars: countChars
             });
             if (countChars <= 0) {
-              {/*console.log('TODO: add validation');*/}
+              {/*console.log('TODO: add validation');*/
+              }
             } else {
-              {/*console.log('add validation');*/}
+              {/*console.log('add validation');*/
+              }
             }
           }}
           maxLength={140}
@@ -148,17 +137,19 @@ export default class ChatBoard extends React.PureComponent {
         <ChatBoardHeader title="Kirsten Mckellar"/>
         <section className="messageBoard" ref={e => this.messageList = e}>
           {
-            this.props.messages.map((message, index) =>
-              <Message
+            this.props.messages.map((message, index) => {
+              const isMine = this.props.stubUser.imgSrc === (message.imgSrc || this.props.stubUser.imgSrc);
+              return <Message
                 key={index}
                 text={message.text}
-                imgSrc={matt}
+                imgSrc={message.imgSrc}
                 time={message.time}
-                isMine={index % 2 !== 0}
-              />)
+                isMine={isMine}
+              />;
+            })
           }
         </section>
-        <InputField sendMessage={this.props.sendMessage} messages={this.props.messages}/>
+        <InputField {...this.props}/>
       </section>
     );
   }

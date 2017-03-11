@@ -8,8 +8,8 @@ import Root from '../component';
 import './style.css';
 import configureStore from '../store/configureStore';
 import {Provider} from 'react-redux';
-const json = require('../../data/kirsten-conversation.json');
-// TODO: scroll-message-section + refactoring + redux + interactions + modals + sprites
+// import {Router, browserHistory, Route, IndexRoute} from 'react-router';
+// TODO: refactoring + sprites
 
 const store = configureStore();
 ReactDOM.render(
@@ -19,7 +19,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-console.log(json);
 
 if (module.hot && process.env.NODE_ENV !== 'prod') {
   module.hot.accept('../component', () => {

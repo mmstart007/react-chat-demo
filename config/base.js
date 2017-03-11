@@ -57,7 +57,7 @@ module.exports = () => {
           use: {
             loader: 'file-loader',
             options: {
-              name: 'assets/[name].[hash].[ext]'
+              name: '[name].[ext]'
             }
           }
         },
@@ -103,7 +103,12 @@ module.exports = () => {
         manifestVariable: 'webpackManifest'
       }),
       new WebpackChunkHash(),
-      new CopyWebpackPlugin([{from: 'src/data/', to: 'data/'}])
+      new CopyWebpackPlugin(
+        [
+          {from: 'src/data/', to: 'data/'},
+          {from: 'src/assets/', to: 'assets/'}
+        ]
+      )
     ],
   };
 };

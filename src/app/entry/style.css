@@ -45,3 +45,12 @@ button:focus, button {
   border: 0;
   outline: 0;
 }
+
+button {
+  border: none;
+  background: none;
+}
+
+a {
+  text-decoration: none;
+}

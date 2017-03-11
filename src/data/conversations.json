@@ -1,0 +1,124 @@
+[
+  {
+    "id": 1,
+    "title": "claire",
+    "imgSrc": "claire",
+    "messages": [
+      {
+        "text": "Hello",
+        "imgSrc": "claire",
+        "time": "12:45:10"
+      },
+      {
+        "text": "Hello, Claire!",
+        "imgSrc": "dave",
+        "time": "12:45:20"
+      },
+      {
+        "text": "How are you?",
+        "imgSrc": "claire",
+        "time": "12:46:24"
+      },
+      {
+        "text": "I'm fine. And you?",
+        "imgSrc": "dave",
+        "time": "12:46:24"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "kayne",
+    "imgSrc": "claire",
+    "messages": [
+      {
+        "text": "Hello",
+        "imgSrc": "kayne",
+        "time": "12:45:10"
+      },
+      {
+        "text": "Hello, Kayne!",
+        "imgSrc": "dave",
+        "time": "12:45:20"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "kirsten",
+    "imgSrc": "claire",
+    "messages": [
+      {
+        "text": "Hello",
+        "imgSrc": "kirsten",
+        "time": "12:45:10"
+      },
+      {
+        "text": "Hello, Kirsten!",
+        "imgSrc": "dave",
+        "time": "12:45:20"
+      },
+      {
+        "text": "How are you?",
+        "imgSrc": "kirsten",
+        "time": "12:46:24"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "mace",
+    "imgSrc": "claire",
+    "messages": [
+      {
+        "text": "Hello",
+        "imgSrc": "mace",
+        "time": "12:45:10"
+      },
+      {
+        "text": "How are you?",
+        "imgSrc": "mace",
+        "time": "12:46:24"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "matt",
+    "imgSrc": "claire",
+    "messages": [
+      {
+        "text": "Hello",
+        "imgSrc": "matt",
+        "time": "12:45:10"
+      },
+      {
+        "text": "Hello, Matt!",
+        "imgSrc": "dave",
+        "time": "12:45:20"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "shaun",
+    "imgSrc": "claire",
+    "messages": [
+      {
+        "text": "Hello",
+        "imgSrc": "shaun",
+        "time": "12:45:10"
+      },
+      {
+        "text": "Hello, Shaun!",
+        "imgSrc": "dave",
+        "time": "12:45:20"
+      },
+      {
+        "text": "How are you?",
+        "imgSrc": "shaun",
+        "time": "12:46:24"
+      }
+    ]
+  }
+]
