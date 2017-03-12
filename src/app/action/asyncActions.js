@@ -1,20 +1,27 @@
 'use strict';
 import 'isomorphic-fetch';
-import * as Actions from './constants';
+import * as ActionTypes from './constants';
 
 export const selectConversation = (conversation) => {
   return {
-    type: Actions.SELECT_CONVERSATION,
+    type: ActionTypes.SELECT_CONVERSATION,
     payload: conversation,
   };
 };
 
-// export const invalidateConversation = (conversation) => {
-//   return {
-//     type: Actions.INVALIDATE_CONVERSATION,
-//     payload: conversation,
-//   };
-// };
+export const deleteConversation = (conversation) => {
+  return {
+    type: ActionTypes.DELETE_CONVERSATION,
+    payload: conversation,
+  };
+};
+
+export const pinConversation = (conversation) => {
+  return {
+    type: ActionTypes.SET_PINNED,
+    payload: conversation,
+  };
+};
 
 const fetchMessages = (conversation) => {
   return dispatch => {
@@ -23,28 +30,30 @@ const fetchMessages = (conversation) => {
       .then(response => response.json())
       .then(json => dispatch(receiveConversations(json)))
       .then(json => {
-        dispatch(receiveMessages(conversation, json.payload.filter(i => i.title === conversation)[0].messages));
+        dispatch(receiveMessages(conversation, json.payload.filter(i => i.id === conversation)[0].messages));
       });
   };
 };
 
 const requestMessages = (conversation) => {
   return {
-    type: Actions.REQUEST_MESSAGES,
-    payload: conversation,
+    type: ActionTypes.REQUEST_MESSAGES,
+    payload: {
+      conversation
+    },
   };
 };
 
 const receiveConversations = (json) => {
   return {
-    type: Actions.RECEIVE_CONVERSATIONS,
+    type: ActionTypes.RECEIVE_CONVERSATIONS,
     payload: json,
   };
 };
 
 const receiveMessages = (conversation, json) => {
   return {
-    type: Actions.RECEIVE_MESSAGES,
+    type: ActionTypes.RECEIVE_MESSAGES,
     payload: {
       conversation: conversation,
       messages: json,

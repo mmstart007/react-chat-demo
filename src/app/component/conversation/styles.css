@@ -1,0 +1,86 @@
+.conversation {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.conversation:hover {
+  background-color: #363d45;
+}
+
+.conversationMessage {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  flex: 2;
+  padding: 25px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.conversationImg {
+  position: relative;
+}
+
+.conversationImg > img {
+  width: 50px;
+  height: 50px;
+}
+
+.pinned::before {
+  position: absolute;
+  left: -10px;
+  top: 0;
+  content: '\f08d';
+  font-family: FontAwesome, serif;
+  font-size: 1em;
+  color: #2b80ff;
+}
+
+.conversationMessage::before {
+  position: absolute;
+  bottom: 0;
+  border-bottom: 1px solid #3e454b;
+  width: 50px;
+  content: '';
+}
+
+
+.message {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.conversationTitle {
+  color: #ffffff;
+}
+
+.conversationText {
+  margin: 5px 0;
+  color: #676c71;
+}
+
+.messageInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-right: 20px;
+}
+
+.moreButton::after {
+  font-family: FontAwesome, serif;
+  color: #e9eaeb;
+  font-size: 1em;
+  content: '\f141';
+}
+
+.conversationTime {
+  color: #50555b;
+  margin-top: 10px;
+}

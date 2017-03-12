@@ -1,27 +1,28 @@
 'use strict';
 
 import {connect} from 'react-redux';
-// import * as Actions from '../../action/actions';
 import * as AsyncActions from '../../action/asyncActions';
 import ConversationPanel from '../../component/conversation-panel/ConversationPanel';
 
 const mapStateToProps = (state) => {
+  const pattern = state.filterConversations;
+  const filteredConversations = state.conversations.filter(con => con.title.search(new RegExp(pattern, 'i')) > -1);
   return {
-    conversations: state.conversations,
+    conversations: pattern ? filteredConversations : state.conversations
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     chooseConversation: (conversation) => {
-      dispatch(AsyncActions.selectConversation(`${conversation}`));
+      dispatch(AsyncActions.selectConversation(conversation));
     },
-    // deleteConversation: (conversation) => {
-    //  delete
-    // },
-    // pinConversation: (conversation) => {
-    //  pin
-    // },
+    deleteConversation: (conversation) => {
+      dispatch(AsyncActions.deleteConversation(conversation));
+    },
+    pinConversation: (conversation) => {
+      dispatch(AsyncActions.pinConversation(conversation));
+    },
   };
 };
 

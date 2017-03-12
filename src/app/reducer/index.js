@@ -1,61 +1,22 @@
 'use strict';
 
 import {combineReducers} from 'redux';
-import * as Actions from '../action/constants';
+import * as ActionTypes from '../action/constants';
+import messagesByConversation from './messagesByConversation';
 
-const selectedConversation = (state = 'matt', action) => {
+const selectedConversation = (state = 0, action) => {
   switch (action.type) {
-  case Actions.SELECT_CONVERSATION:
+  case ActionTypes.SELECT_CONVERSATION:
     return action.payload;
   default:
     return state;
   }
 };
 
-const initState = {
-  isFetching: false,
-  didInvalidate: false,
-  messages: [],
-};
-
-const messages = (state = initState, action) => {
+export const filterConversations = (state = '', action) => {
   switch (action.type) {
-  case Actions.INVALIDATE_CONVERSATION:
-    return Object.assign({}, state, {
-      didInvalidate: true
-    });
-  case Actions.REQUEST_MESSAGES:
-    return Object.assign({}, state, {
-      isFetching: true,
-      didInvalidate: false
-    });
-  case Actions.RECEIVE_MESSAGES:
-    return Object.assign({}, state, {
-      isFetching: false,
-      didInvalidate: false,
-      messages: action.payload.messages,
-      lastUpdated: action.payload.receivedAt
-    });
-  case Actions.SEND_MESSAGE:
-    return Object.assign({}, state, {
-      isFetching: false,
-      didInvalidate: false,
-      messages: [...state.messages, action.payload.message]
-    });
-  default:
-    return state;
-  }
-};
-
-const messagesByConversation = (state = {}, action) => {
-  switch (action.type) {
-  case Actions.SEND_MESSAGE:
-  case Actions.INVALIDATE_CONVERSATION:
-  case Actions.RECEIVE_MESSAGES:
-  case Actions.REQUEST_MESSAGES:
-    return Object.assign({}, state, {
-      [action.payload.conversation]: messages(state[action.payload.conversation], action)
-    });
+  case ActionTypes.FILTRATION:
+    return action.payload;
   default:
     return state;
   }
@@ -63,13 +24,32 @@ const messagesByConversation = (state = {}, action) => {
 
 const conversations = (state = [], action) => {
   switch (action.type) {
-  case Actions.RECEIVE_CONVERSATIONS:
+  case ActionTypes.RECEIVE_CONVERSATIONS:
     return action.payload;
+  case ActionTypes.DELETE_CONVERSATION:
+    return state.filter(i => i.id !== action.payload || i.id === 0);
+  case ActionTypes.SET_PINNED:
+    return state.map(con => {
+      if (con.id !== action.payload || con.id === 0) {
+        return con;
+      }
+      return Object.assign({}, con, {
+        pinned: !con.pinned,
+      });
+    }).concat().sort((a, b) => {
+      if (a.pinned && !b.pinned) {
+        return -1;
+      } else if (!a.pinned && b.pinned) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+
   default:
     return state;
   }
 };
-
 
 const stubUser = () => {
   return {
@@ -83,6 +63,7 @@ const rootReducer = combineReducers({
   messagesByConversation,
   conversations,
   stubUser,
+  filterConversations,
 });
 
 export default rootReducer;

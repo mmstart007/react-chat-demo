@@ -1,8 +1,22 @@
 [
   {
+    "id": 0,
+    "title": "Dave Dave",
+    "imgSrc": "dave",
+    "pinned": true,
+    "messages": [
+      {
+        "text": "Hello, it's my storage",
+        "imgSrc": "dave",
+        "time": "12:42:10"
+      }
+    ]
+  },
+  {
     "id": 1,
-    "title": "claire",
+    "title": "Claire Sharwood",
     "imgSrc": "claire",
+    "pinned": false,
     "messages": [
       {
         "text": "Hello",
@@ -28,8 +42,9 @@
   },
   {
     "id": 2,
-    "title": "kayne",
-    "imgSrc": "claire",
+    "title": "Kayne West",
+    "imgSrc": "kayne",
+    "pinned": false,
     "messages": [
       {
         "text": "Hello",
@@ -45,8 +60,9 @@
   },
   {
     "id": 3,
-    "title": "kirsten",
-    "imgSrc": "claire",
+    "title": "Kirsten Mckellar",
+    "imgSrc": "kirsten",
+    "pinned": false,
     "messages": [
       {
         "text": "Hello",
@@ -67,8 +83,9 @@
   },
   {
     "id": 4,
-    "title": "mace",
-    "imgSrc": "claire",
+    "title": "Mace Windu",
+    "imgSrc": "mace",
+    "pinned": false,
     "messages": [
       {
         "text": "Hello",
@@ -84,8 +101,9 @@
   },
   {
     "id": 5,
-    "title": "matt",
-    "imgSrc": "claire",
+    "title": "Matt Thompson",
+    "imgSrc": "matt",
+    "pinned": false,
     "messages": [
       {
         "text": "Hello",
@@ -101,8 +119,9 @@
   },
   {
     "id": 6,
-    "title": "shaun",
-    "imgSrc": "claire",
+    "title": "Shaun Gardner",
+    "imgSrc": "shaun",
+    "pinned": false,
     "messages": [
       {
         "text": "Hello",

@@ -65,7 +65,6 @@ class InputField extends React.PureComponent {
         <textarea
           ref={input => {
             this.input = input;
-            input && input.focus();
           }}
           value={this.input.value}
           onKeyDown={(e) => {

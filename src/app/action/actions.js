@@ -1,9 +1,19 @@
 'use strict';
-import * as Actions from './constants';
+import * as ActionTypes from './constants';
 
 export const sendMessage = (message, conversation) => {
   return {
-    type: Actions.SEND_MESSAGE,
-    payload: {message, conversation},
+    type: ActionTypes.SEND_MESSAGE,
+    payload: {
+      message,
+      conversation,
+    },
+  };
+};
+
+export const filtration = (filter) => {
+  return {
+    type: ActionTypes.FILTRATION,
+    payload: filter,
   };
 };
