@@ -4,11 +4,12 @@
     "title": "Dave Dave",
     "imgSrc": "dave",
     "pinned": true,
+    "lastUpdated": 1489344474682,
     "messages": [
       {
         "text": "Hello, it's my storage",
         "imgSrc": "dave",
-        "time": "12:42:10"
+        "time": 1489344474682
       }
     ]
   },
@@ -17,26 +18,27 @@
     "title": "Claire Sharwood",
     "imgSrc": "claire",
     "pinned": false,
+    "lastUpdated": 1489344474682,
     "messages": [
       {
         "text": "Hello",
         "imgSrc": "claire",
-        "time": "12:45:10"
+        "time": 1489344474682
       },
       {
         "text": "Hello, Claire!",
         "imgSrc": "dave",
-        "time": "12:45:20"
+        "time": 1489344474682
       },
       {
         "text": "How are you?",
         "imgSrc": "claire",
-        "time": "12:46:24"
+        "time": 1489344474682
       },
       {
         "text": "I'm fine. And you?",
         "imgSrc": "dave",
-        "time": "12:46:24"
+        "time": 1489344474682
       }
     ]
   },
@@ -45,16 +47,17 @@
     "title": "Kayne West",
     "imgSrc": "kayne",
     "pinned": false,
+    "lastUpdated": 1489344474682,
     "messages": [
       {
         "text": "Hello",
         "imgSrc": "kayne",
-        "time": "12:45:10"
+        "time": 1489344474682
       },
       {
         "text": "Hello, Kayne!",
         "imgSrc": "dave",
-        "time": "12:45:20"
+        "time": 1489344474682
       }
     ]
   },
@@ -63,21 +66,22 @@
     "title": "Kirsten Mckellar",
     "imgSrc": "kirsten",
     "pinned": false,
+    "lastUpdated": 1489344474682,
     "messages": [
       {
         "text": "Hello",
         "imgSrc": "kirsten",
-        "time": "12:45:10"
+        "time": 1489344474682
       },
       {
         "text": "Hello, Kirsten!",
         "imgSrc": "dave",
-        "time": "12:45:20"
+        "time": 1489344474682
       },
       {
         "text": "How are you?",
         "imgSrc": "kirsten",
-        "time": "12:46:24"
+        "time": 1489344474682
       }
     ]
   },
@@ -86,16 +90,17 @@
     "title": "Mace Windu",
     "imgSrc": "mace",
     "pinned": false,
+    "lastUpdated": 1489344474682,
     "messages": [
       {
         "text": "Hello",
         "imgSrc": "mace",
-        "time": "12:45:10"
+        "time": 1489344474682
       },
       {
         "text": "How are you?",
         "imgSrc": "mace",
-        "time": "12:46:24"
+        "time": 1489344474682
       }
     ]
   },
@@ -104,16 +109,17 @@
     "title": "Matt Thompson",
     "imgSrc": "matt",
     "pinned": false,
+    "lastUpdated": 1489344474682,
     "messages": [
       {
         "text": "Hello",
         "imgSrc": "matt",
-        "time": "12:45:10"
+        "time": 1489344474682
       },
       {
         "text": "Hello, Matt!",
         "imgSrc": "dave",
-        "time": "12:45:20"
+        "time": 1489344474682
       }
     ]
   },
@@ -122,21 +128,22 @@
     "title": "Shaun Gardner",
     "imgSrc": "shaun",
     "pinned": false,
+    "lastUpdated": 1489344474682,
     "messages": [
       {
         "text": "Hello",
         "imgSrc": "shaun",
-        "time": "12:45:10"
+        "time": 1489344474682
       },
       {
         "text": "Hello, Shaun!",
         "imgSrc": "dave",
-        "time": "12:45:20"
+        "time": 1489344474682
       },
       {
         "text": "How are you?",
         "imgSrc": "shaun",
-        "time": "12:46:24"
+        "time": 1489344474682
       }
     ]
   }

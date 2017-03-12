@@ -2,6 +2,7 @@
 
 import React from 'react';
 import MoreButton from '../more-button/MoreButton';
+import * as Utils from '../../utils/utils';
 import LoaderWrapper from '../loader/ComponentWrapper';
 import '../more-button/modalStyle.css';
 import './styles.css';
@@ -15,6 +16,7 @@ export default class Conversation extends React.PureComponent {
   render() {
     const {id, title, text, imgSrc, time, pinned} = this.props;
     const pinnedActive = pinned ? 'pinned' : '';
+    const prettyTime = Utils.getTime(new Date(time));
     return (
       <section className='conversation'>
         <section
@@ -40,7 +42,7 @@ export default class Conversation extends React.PureComponent {
             deleteConversation={this.props.deleteConversation}
             pinConversation={this.props.pinConversation}
           />
-          <span className="conversationTime">{time}</span>
+          <span className="conversationTime">{prettyTime}</span>
         </div>
       </section>
     );
@@ -52,5 +54,5 @@ Conversation.propTypes = {
   title: React.PropTypes.string.isRequired,
   text: React.PropTypes.string.isRequired,
   imgSrc: React.PropTypes.string.isRequired,
-  time: React.PropTypes.string.isRequired,
+  time: React.PropTypes.number.isRequired,
 };

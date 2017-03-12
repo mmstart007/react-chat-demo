@@ -1,6 +1,7 @@
 'use strict';
 import React from 'react';
 import LoaderWrapper from '../loader/ComponentWrapper';
+import * as Utils from '../../utils/utils';
 import './styles.css';
 import './chat-board-section.css';
 import ChatBoardHeader from '../chat-board-header/ChatBoardHeader';
@@ -39,23 +40,12 @@ class InputField extends React.PureComponent {
     e.preventDefault();
     const textContent = this.input.value;
     if (textContent) {
-      const time = this.getCurrentTime();
-      const message = {time: time, text: textContent.replace(/\n+/g, '\n'), imgSrc: this.props.stubUser.imgSrc};
+      const message = {time: new Date().getTime(), text: textContent.replace(/\n+/g, '\n'), imgSrc: this.props.stubUser.imgSrc};
       const conversation = this.props.selectedConversation;
       this.props.sendMessage(message, conversation);
       this.input.value = '';
       this.setState({countChars: 140});
     }
-  }
-
-  getCurrentTime() {
-    const date = new Date();
-    const timeUnits = [date.getHours(), date.getMinutes(), date.getSeconds()];
-    return timeUnits.map(this.prettyTimeUnitPrint).reduce((i, j) => `${i}:${j}`);
-  }
-
-  prettyTimeUnitPrint(unit) {
-    return unit < 10 ? '0' + unit : unit;
   }
 
   render() {
@@ -142,7 +132,7 @@ export default class ChatBoard extends React.PureComponent {
                 key={index}
                 text={message.text}
                 imgSrc={message.imgSrc}
-                time={message.time}
+                time={Utils.getTime(new Date(message.time))}
                 isMine={isMine}
               />;
             })

@@ -14,15 +14,17 @@ export default class ConversationPanel extends React.PureComponent {
         <section>
           {
             this.props.conversations.map(
-              con => <Conversation
-                key={con.id}
-                id={con.id}
-                pinned={con.pinned}
-                title={con.title}
-                imgSrc={con.imgSrc}
-                text={con.messages[con.messages.length - 1].text}
-                time={con.messages[con.messages.length - 1].time}
-                {...this.props}/>
+              con => {
+                return <Conversation
+                  key={con.id}
+                  id={con.id}
+                  pinned={con.pinned}
+                  title={con.title}
+                  imgSrc={con.imgSrc}
+                  text={con.messages[con.messages.length - 1].text}
+                  time={con.messages[con.messages.length - 1].time}
+                  {...this.props}/>;
+              }
             )
           }
         </section>

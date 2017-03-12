@@ -8,13 +8,16 @@ import Root from '../component';
 import './style.css';
 import configureStore from '../store/configureStore';
 import {Provider} from 'react-redux';
-// import {Router, browserHistory, Route, IndexRoute} from 'react-router';
+import {Router, browserHistory, Route} from 'react-router';
 // TODO: refactoring + sprites
 
 const store = configureStore();
 ReactDOM.render(
   <Provider store={store}>
-    <Root/>
+    <Router history={browserHistory}>
+      <Route path='/' component={Root}/>
+      <Route path='*' component={Root}/>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
