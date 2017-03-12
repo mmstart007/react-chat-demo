@@ -17,3 +17,15 @@ export const filtration = (filter) => {
     payload: filter,
   };
 };
+
+export const showConversationList = () => {
+  return {
+    type: ActionTypes.SHOW_CONVERSATION_LIST,
+  };
+};
+
+export const closeConversationList = () => {
+  return {
+    type: ActionTypes.CLOSE_CONVERSATION_LIST,
+  };
+};

@@ -3,6 +3,7 @@
 import {combineReducers} from 'redux';
 import * as ActionTypes from '../action/constants';
 import messagesByConversation from './messagesByConversation';
+import conversationAppearance from './conversationAppearance';
 
 const selectedConversation = (state = 0, action) => {
   switch (action.type) {
@@ -64,6 +65,7 @@ const rootReducer = combineReducers({
   conversations,
   stubUser,
   filterConversations,
+  conversationAppearance,
 });
 
 export default rootReducer;

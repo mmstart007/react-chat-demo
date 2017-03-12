@@ -18,10 +18,21 @@ LeftSideItem.propTypes = {
 
 
 export default class LeftSide extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {showList: true};
+  }
+
   render() {
     return (
       <nav className="navContainer">
-        <header className="navHeader">
+        <header
+          className="navHeader"
+          onClick={() => {
+            this.state.showList ? this.props.closeConversationList() : this.props.showConversationList();
+            this.setState({showList: !this.state.showList});
+          }}
+        >
           <span className="menuIcon"/>
         </header>
         <section>

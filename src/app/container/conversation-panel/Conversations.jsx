@@ -8,7 +8,8 @@ const mapStateToProps = (state) => {
   const pattern = state.filterConversations;
   const filteredConversations = state.conversations.filter(con => con.title.search(new RegExp(pattern, 'i')) > -1);
   return {
-    conversations: pattern ? filteredConversations : state.conversations
+    conversations: pattern ? filteredConversations : state.conversations,
+    showConversationList: state.conversationAppearance,
   };
 };
 

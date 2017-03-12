@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import LeftSide from './left-side/LeftSide';
+import LeftSide from '../container/left-side/LeftSide';
 import Conversations from '../container/conversation-panel/Conversations';
 import ChatBoard from '../container/chat-board/Board';
 // import UserInfo from './user-info/UserInfo';

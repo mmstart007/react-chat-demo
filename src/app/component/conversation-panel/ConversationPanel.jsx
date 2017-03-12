@@ -8,6 +8,7 @@ import './styles.css';
 export default class ConversationPanel extends React.PureComponent {
   render() {
     return (
+      this.props.showConversationList &&
       <section className="conversationPanelContainer">
         <ConversationSearch/>
         <section>
