@@ -16,6 +16,7 @@ export default class ConversationSearch extends React.PureComponent {
           className="searchConversation"
           placeholder="Search"
           ref={(input) => this.input = input}
+          value={this.input.value}
           autoFocus={true}
           onChange={() => {
             this.props.filterConversations(this.input.value);

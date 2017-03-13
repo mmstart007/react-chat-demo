@@ -1,0 +1,62 @@
+.inputFieldContainer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #fbfcfd;
+  border-top: 1px solid #e1e4e4;
+}
+
+.chatButtonAttach {
+  padding: 28px;
+  cursor: pointer;
+}
+
+.chatButtonAttach::before {
+  content: '\f0c6';
+  display: inline-block;
+  font-family: FontAwesome, serif;
+  font-size: 1.5em;
+  color: #93969a;
+  transform: rotate(223deg);
+}
+
+.chatButtonAttach:hover::before {
+  color: #2b80ff;
+}
+
+.messageField {
+  flex: 1 0;
+  margin-left: 10px;
+  font-size: 1.5em;
+  color: #1d232a;
+  background-color: #fbfcfd;
+  border: none;
+  resize: none;
+  overflow: hidden;
+  padding-top: 10px;
+  min-height: 50px;
+  max-height: 150px;
+  display: inline-block;
+  outline: none;
+}
+
+.chatButtonSend {
+  padding: 28px;
+  cursor: pointer;
+}
+
+.chatButtonSend::after {
+  content: '\f1d8';
+  font-family: FontAwesome, serif;
+  font-size: 1.5em;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 20px;
+  background-color: #93969a;
+}
+
+.chatButtonSend:hover::after {
+  background-color: #363d45;
+}

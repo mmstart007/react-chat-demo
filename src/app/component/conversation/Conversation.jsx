@@ -9,10 +9,6 @@ import './styles.css';
 
 const WrappedImage = LoaderWrapper(({src}) => <img src={src}/>);
 export default class Conversation extends React.PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {id, title, text, imgSrc, time, pinned} = this.props;
     const pinnedActive = pinned ? 'pinned' : '';

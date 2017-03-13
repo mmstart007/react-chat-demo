@@ -4,7 +4,6 @@ import React from 'react';
 import {Router, Route, browserHistory} from 'react-router';
 import './styles.css';
 
-
 const Photo = () => <section>Photo</section>;
 const Video = () => <section>Video</section>;
 const Audio = () => <section>Audio</section>;
@@ -18,6 +17,7 @@ const routes =
       <Route path='documents' component={Documents}/>
     </Route>
   </Route>;
+
 export default class Attachments extends React.PureComponent {
   onClick(e) {
     e.preventDefault();

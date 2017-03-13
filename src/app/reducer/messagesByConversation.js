@@ -41,11 +41,15 @@ const messagesByConversation = (state = {}, action) => {
   switch (action.type) {
   case ActionTypes.SEND_MESSAGE:
   case ActionTypes.DELETE_CONVERSATION:
-  case ActionTypes.RECEIVE_MESSAGES:
   case ActionTypes.REQUEST_MESSAGES:
+  case ActionTypes.RECEIVE_MESSAGES: {
+    const toMessages = Array.isArray(state) ?
+      state.filter(con => con.id === action.payload.conversation)[0]
+      : state[action.payload.conversation];
     return Object.assign({}, state, {
-      [action.payload.conversation]: messages(state[action.payload.conversation], action)
+      [action.payload.conversation]: messages(toMessages, action)
     });
+  }
   default:
     return state;
   }

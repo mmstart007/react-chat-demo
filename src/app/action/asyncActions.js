@@ -30,7 +30,7 @@ const fetchMessages = (conversation) => {
       .then(response => response.json())
       .then(json => dispatch(receiveConversations(json)))
       .then(json => {
-        dispatch(receiveMessages(conversation, json.payload.filter(i => i.id === conversation)[0].messages));
+        dispatch(receiveMessages(conversation, json.payload.filter(con => con.id === conversation).pop().messages));
       });
   };
 };

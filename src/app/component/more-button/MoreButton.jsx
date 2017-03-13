@@ -15,7 +15,7 @@ export default class MoreButton extends React.PureComponent {
 
   render() {
     return (
-      this.props.id !== 0 &&
+      this.props.id !== 'id0' &&
       <section
         onMouseEnter={() => {
           this.setState({showModal: true});
