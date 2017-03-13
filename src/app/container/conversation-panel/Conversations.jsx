@@ -20,6 +20,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     deleteConversation: (conversation) => {
       dispatch(AsyncActions.deleteConversation(conversation));
+      dispatch(AsyncActions.selectConversation(0));
     },
     pinConversation: (conversation) => {
       dispatch(AsyncActions.pinConversation(conversation));

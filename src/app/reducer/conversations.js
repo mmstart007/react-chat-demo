@@ -16,7 +16,7 @@ const timeComparator = (i, j) => j.lastUpdated - i.lastUpdated;
 const conversations = (state = [], action) => {
   switch (action.type) {
   case ActionTypes.RECEIVE_CONVERSATIONS:
-    return Array.from(Object.assign([], action.payload, state)).sort(timeComparator).sort(pinnedComparator);
+    return (state.length > 0 ? state : action.payload)/*Array.from(Object.assign([], action.payload, state))*/.sort(timeComparator).sort(pinnedComparator);
   case ActionTypes.DELETE_CONVERSATION:
     return state.filter(i => i.id !== action.payload || i.id === 0);
   case ActionTypes.SET_PINNED:
