@@ -1,0 +1,4 @@
+'use strict';
+/* global module */
+
+module.exports = 'test-file-stub';

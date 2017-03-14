@@ -25,9 +25,9 @@ export default class ChatBoardHeader extends React.PureComponent {
               browserHistory.push(href);
               this.setState({showAttachmentModal: !this.state.showAttachmentModal});
             }}/>
-          <span className="chatButton favouriteButton"/>
-          <span className="chatButton callButton"/>
-          <span className="chatButton videoCallButton"/>
+          <a className="chatButton favouriteButton"/>
+          <a className="chatButton callButton"/>
+          <a className="chatButton videoCallButton"/>
         </section>
         {this.state.showAttachmentModal && <ChatBoardModal onClose={() => this.setState({showAttachmentModal: false})}/>}
       </header>
