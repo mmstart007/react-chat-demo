@@ -58,7 +58,7 @@ module.exports = () => {
           use: {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]'
+              name: 'assets/icons/[name].[ext]'
             }
           }
         },
@@ -74,7 +74,7 @@ module.exports = () => {
             loader: 'file-loader',
             options: {
               limit: 100000,
-              name: 'assets/[name].[hash].[ext]'
+              name: 'assets/fonts/[name].[hash].[ext]'
             },
           }
         }
@@ -110,7 +110,8 @@ module.exports = () => {
       new CopyWebpackPlugin(
         [
           {from: 'src/data/', to: 'data/'},
-          {from: 'src/assets/', to: 'assets/'}
+          {from: 'src/assets/user-info', to: 'assets/user-info'},
+          {from: 'src/assets/conversations', to: 'assets/conversations'}
         ]
       )
     ],
