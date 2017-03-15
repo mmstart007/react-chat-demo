@@ -23,7 +23,7 @@ module.exports = (env) => {
       noInfo: false,
       headers: {'X-Custom-Header': 'yes'},
       quiet: false,
-      compress: false,
+      compress: true,
       hot: true,
       stats: {colors: true},
       open: false,

@@ -11,6 +11,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const WebpackChunkHash = require('webpack-chunk-hash');
 const rootDir = path.resolve(__dirname, '..');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
 module.exports = () => {
   // noinspection JSUnresolvedFunction
@@ -88,6 +89,9 @@ module.exports = () => {
         filename: 'index.html',
         inject: 'body',
         template: path.resolve(rootDir, 'src/app/entry', 'index.html')
+      }),
+      new ScriptExtHtmlWebpackPlugin({
+        defaultAttribute: 'defer'
       }),
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
