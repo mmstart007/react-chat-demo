@@ -4,16 +4,25 @@ import React from 'react';
 import items from './data';
 import './styles.css';
 
-const LeftSideItem = ({imgSrc, title}) =>
+const LeftSideItem = ({title, position}) =>
   <li className="messenger">
     <figure>
-      <img src={imgSrc} alt={title}/>
+      <span
+        style={{
+          backgroundPosition: `${position.x}px ${position.y}px`,
+          width: '44px',
+          height: '42px',
+        }}
+        alt={title}/>
     </figure>
   </li>;
 
 LeftSideItem.propTypes = {
-  imgSrc: React.PropTypes.string.isRequired,
   title: React.PropTypes.string.isRequired,
+  position: React.PropTypes.shape({
+    x: React.PropTypes.number.isRequired,
+    y: React.PropTypes.number.isRequired,
+  })
 };
 
 
@@ -37,7 +46,8 @@ export default class LeftSide extends React.PureComponent {
         </header>
         <section>
           <ul className="menuItems">
-            {items.map(item => <LeftSideItem key={item.title} imgSrc={item.imgSrc} title={item.title}/>)}
+            {items.map(item => <LeftSideItem key={item.title} title={item.title}
+                                             position={item.position}/>)}
           </ul>
         </section>
       </nav>

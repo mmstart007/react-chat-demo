@@ -51,7 +51,7 @@
   animation: 0;
 }
 
-.messenger > figure > img {
-  width: 44px;
-  height: 42px;
+.messenger > figure > span {
+  border: 0;
+  background-image: url(../../../assets/icons/icons.png);
 }

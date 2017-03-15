@@ -1,17 +1,11 @@
 'use strict';
 
-const whatsApp = 'assets/icons/whats_app_icon.png';
-const skypeIcon = 'assets/icons/skype_icon.png';
-const fbIcon = 'assets/icons/t_icon.png';
-const viberIcon = 'assets/icons/viber_icon.png';
-const vkIcon = 'assets/icons/n_icon.png';
-
 const items = [
-  {imgSrc: whatsApp, title: 'WhatsApp'},
-  {imgSrc: skypeIcon, title: 'Skype'},
-  {imgSrc: fbIcon, title: 'FB'},
-  {imgSrc: viberIcon, title: 'Viber'},
-  {imgSrc: vkIcon, title: 'VK'},
+  {title: 'WhatsApp', position: {x: 52, y: 0}},
+  {title: 'Skype', position: {x: -2, y: 55}},
+  {title: 'FB', position: {x: -2, y: 0}},
+  {title: 'Viber', position: {x: 106, y: 55}},
+  {title: 'VK', position: {x: 106, y: 0}},
 ];
 
 export default items;
