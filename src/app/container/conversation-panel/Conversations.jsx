@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
   return {
     conversations: pattern ? filteredConversations : state.conversations,
     showConversationList: state.conversationAppearance,
+    selectedConversation: state.selectedConversation,
   };
 };
 

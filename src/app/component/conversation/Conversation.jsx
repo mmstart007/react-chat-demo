@@ -10,13 +10,14 @@ import './styles.css';
 const WrappedImage = LoaderWrapper(({src}) => <img src={src}/>);
 export default class Conversation extends React.PureComponent {
   render() {
-    const {id, title, text, imgSrc, time, pinned} = this.props;
+    const {id, title, text, imgSrc, time, pinned, isSelected} = this.props;
     const pinnedActive = pinned ? 'pinned' : '';
+    const selected = isSelected ? 'selected' : '';
     const prettyTime = Utils.getTime(new Date(time));
     return (
-      <section className='conversation'>
+      <section className="conversation">
         <section
-          className="conversationMessage"
+          className={`conversationMessage ${selected}`}
           onClick={() => {
             this.props.chooseConversation(id);
           }}
@@ -51,4 +52,7 @@ Conversation.propTypes = {
   text: React.PropTypes.string.isRequired,
   imgSrc: React.PropTypes.string.isRequired,
   time: React.PropTypes.number.isRequired,
+  id: React.PropTypes.number.isRequired,
+  pinned: React.PropTypes.bool.isRequired,
+  isSelected: React.PropTypes.bool.isRequired,
 };

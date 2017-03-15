@@ -18,6 +18,18 @@
   cursor: pointer;
 }
 
+.selected::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  color: white;
+  width: 3px;
+  background-color: #2b80ff;
+  opacity: 0.75;
+  height: 106px;
+}
+
 .conversationImg {
   position: relative;
 }

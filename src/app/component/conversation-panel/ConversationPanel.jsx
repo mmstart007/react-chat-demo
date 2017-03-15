@@ -23,6 +23,7 @@ export default class ConversationPanel extends React.PureComponent {
                   imgSrc={con.imgSrc}
                   text={con.messages[con.messages.length - 1].text}
                   time={con.messages[con.messages.length - 1].time}
+                  isSelected={this.props.selectedConversation === con.id}
                   {...this.props}/>;
               }
             )
